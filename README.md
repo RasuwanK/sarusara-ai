@@ -9,6 +9,22 @@
 * **Context-Aware Agronomic Fusion:** Cross-references visual stress data with crop phenology (age and growth stage), estimated soil baselines, and live weather telemetry to adjust recommendations dynamically (e.g., delaying application if heavy rain is forecasted).
 * **Precision Fertilizer Mapping:** Translates raw nutrient deficits into actionable, commercially available straight fertilizer dosages (Urea, DAP, and MOP) scaled directly to the user's specific field dimensions.
 
+### ResNet-50 nutrient classifier
+
+The training script `train_resnet50.py` classifies a paddy leaf image as nitrogen,
+phosphorous, or potassium deficient using the corresponding folders in
+`dataset/images/`. Install project dependencies with `pip install -r requirements.txt`,
+then run `python train_resnet50.py`. The default run fine-tunes ImageNet-pretrained
+ResNet-50 for 20 epochs. It uses CUDA and mixed precision automatically when a
+compatible GPU is available; on Windows, the default data-loader worker count is 0.
+
+The script makes stratified 70/15/15 train, validation, and test splits. It saves
+the best validation-loss checkpoint, test metrics, a confusion matrix, and
+one-vs-rest precision-recall curves with training history under
+`outputs/resnet50/`. Useful options include `--epochs`, `--batch-size`,
+`--freeze-backbone` (faster head-only fine-tuning), `--workers`, and `--no-pretrained`
+(avoid the ImageNet weight download).
+
 ### System Architecture Highlights
 
 * **Pre-processing Pipeline:** Standardizes raw smartphone images by mitigating sun glare, removing soil/weed backgrounds, and normalizing color spaces.

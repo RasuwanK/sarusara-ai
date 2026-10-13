@@ -6,3 +6,7 @@ pandas
 scikit-image 
 scikit-learn 
 tqdm
+torch
+torchvision
+Pillow
+scikit-learn
