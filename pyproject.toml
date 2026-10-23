@@ -1,13 +1,21 @@
 [project]
 name = "sarusara-ai"
 version = "0.1.0"
-description = "Add your description here"
+description = "Paddy nutrient deficiency classification and image analysis research project"
 readme = "README.md"
-authors = [
-    { name = "Rasuwan Kalhara", email = "kalharaweragala@gmail.com" }
+authors = [{ name = "Rasuwan Kalhara", email = "kalharaweragala@gmail.com" }]
+requires-python = ">=3.11,<3.15"
+dependencies = [
+    "matplotlib>=3.8",
+    "numpy>=1.26",
+    "opencv-python>=4.9",
+    "pillow>=10.0",
+    "scikit-learn>=1.4",
+    "tqdm>=4.66",
 ]
-requires-python = ">=3.14"
-dependencies = []
+
+[project.optional-dependencies]
+notebooks = ["jupyter>=1.0", "pandas>=2.2", "scikit-image>=0.22"]
 
 [project.scripts]
 sarusara-ai = "sarusara_ai:main"

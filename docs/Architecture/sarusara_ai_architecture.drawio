@@ -1,0 +1,524 @@
+<mxfile host="app.diagrams.net" agent="Codex" pages="3">
+  <diagram id="arch" name="System Architecture">
+    <mxGraphModel dx="2289" dy="2264" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1700" pageHeight="980" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" parent="1" style="text;html=1;align=left;verticalAlign=middle;fillColor=#ffffff;strokeColor=#ffffff;fontColor=#172b4d;fontSize=24;align=center;verticalAlign=middle;spacing=8;fontStyle=1;" value="Sarusara AI — Target Application Architecture" vertex="1">
+          <mxGeometry height="38" width="1640" x="50" y="-160" as="geometry" />
+        </mxCell>
+        <mxCell id="research" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;verticalAlign=top;align=left;spacingTop=12;spacingLeft=16;fillColor=#f4f7fb;strokeColor=#385170;fontColor=#385170;fontSize=18;align=center;verticalAlign=middle;spacing=8;fontStyle=1;" value="" vertex="1">
+          <mxGeometry height="500" width="1740" x="30" y="-60" as="geometry" />
+        </mxCell>
+        <mxCell id="runtime" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;verticalAlign=top;align=left;spacingTop=12;spacingLeft=16;fillColor=#f5faf7;strokeColor=#246b55;fontColor=#246b55;fontSize=18;align=center;verticalAlign=middle;spacing=8;fontStyle=1;" value="" vertex="1">
+          <mxGeometry height="620" width="1740" x="30" y="470" as="geometry" />
+        </mxCell>
+        <mxCell id="localdata" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=10;fillColor=#e8f1ff;strokeColor=#4a73a8;fontColor=#172b4d;fontSize=14;align=center;verticalAlign=middle;spacing=8;fontStyle=1;" value="Local paddy images&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;Healthy + N/P/K symptomatic leaves&lt;br&gt;plant/site/capture metadata&lt;/font&gt;" vertex="1">
+          <mxGeometry height="95" width="190" x="70" y="125" as="geometry" />
+        </mxCell>
+        <mxCell id="govdata" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=10;fillColor=#fff3d6;strokeColor=#c28b21;fontColor=#172b4d;fontSize=14;align=center;verticalAlign=middle;spacing=8;fontStyle=1;" value="Government references&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;DOA / RRDI fertilizer guidance&lt;br&gt;soil &amp;amp; leaf-colour rules&lt;/font&gt;" vertex="1">
+          <mxGeometry height="95" width="190" x="70" y="265" as="geometry" />
+        </mxCell>
+        <mxCell id="annotate" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=10;fillColor=#e8f1ff;strokeColor=#4a73a8;fontColor=#172b4d;fontSize=14;align=center;verticalAlign=middle;spacing=8;fontStyle=1;" value="Expert labeling &amp;amp; masks&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;Class labels; leaf boundary;&lt;br&gt;per-deficiency symptom pixels&lt;/font&gt;" vertex="1">
+          <mxGeometry height="95" width="205" x="335" y="125" as="geometry" />
+        </mxCell>
+        <mxCell id="rulesvalidate" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=10;fillColor=#fff3d6;strokeColor=#c28b21;fontColor=#172b4d;fontSize=14;align=center;verticalAlign=middle;spacing=8;fontStyle=1;" value="Transcribe &amp;amp; review rules&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;Source, date, zone, units,&lt;br&gt;conditions, agronomist review&lt;/font&gt;" vertex="1">
+          <mxGeometry height="95" width="205" x="335" y="265" as="geometry" />
+        </mxCell>
+        <mxCell id="splitprep" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=10;fillColor=#e8f1ff;strokeColor=#4a73a8;fontColor=#172b4d;fontSize=14;align=center;verticalAlign=middle;spacing=8;fontStyle=1;" value="Dataset QA + grouped splits&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;Plant/plot/session separation&lt;br&gt;70 / 15 / 15; reproducible&lt;/font&gt;" vertex="1">
+          <mxGeometry height="95" width="205" x="620" as="geometry" />
+        </mxCell>
+        <mxCell id="experiments" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=10;fillColor=#e8f1ff;strokeColor=#4a73a8;fontColor=#172b4d;fontSize=14;align=center;verticalAlign=middle;spacing=8;fontStyle=1;" value="Preprocess &amp;amp; compare models&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;ResNet, MobileNet, EfficientNet,&lt;br&gt;CNN; validation-based selection&lt;/font&gt;" vertex="1">
+          <mxGeometry height="95" width="220" x="900" as="geometry" />
+        </mxCell>
+        <mxCell id="segtrain" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=10;fillColor=#e8f1ff;strokeColor=#4a73a8;fontColor=#172b4d;fontSize=14;align=center;verticalAlign=middle;spacing=8;fontStyle=1;" value="Train segmentation models&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;Leaf mask + symptom masks&lt;br&gt;Dice / IoU / SI error&lt;/font&gt;" vertex="1">
+          <mxGeometry height="95" width="220" x="880" y="185" as="geometry" />
+        </mxCell>
+        <mxCell id="verifyrelease" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=10;fillColor=#e6f5ed;strokeColor=#42816c;fontColor=#172b4d;fontSize=14;align=center;verticalAlign=middle;spacing=8;fontStyle=1;" value="Holdout evaluation &amp;amp; release&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;Frozen test; performance, latency,&lt;br&gt;size; reviewed model/rule versions&lt;/font&gt;" vertex="1">
+          <mxGeometry height="115" width="220" x="1200" y="175" as="geometry" />
+        </mxCell>
+        <mxCell id="bundle" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=10;fillColor=#e6f5ed;strokeColor=#42816c;fontColor=#172b4d;fontSize=14;align=center;verticalAlign=middle;spacing=8;fontStyle=1;" value="Versioned app assets&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;Classifier + segmenter&lt;br&gt;DOA-derived local rule set&lt;/font&gt;" vertex="1">
+          <mxGeometry height="115" width="155" x="1570" y="175" as="geometry" />
+        </mxCell>
+        <mxCell id="a1" edge="1" parent="1" source="localdata" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#526477;strokeWidth=2;endArrow=block;endFill=1;fontSize=12;fontColor=#344563;labelBackgroundColor=#ffffff;" target="annotate" value="images &amp;amp; metadata">
+          <mxGeometry relative="1" x="0.0667" y="72" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="a2" edge="1" parent="1" source="annotate" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#526477;strokeWidth=2;endArrow=block;endFill=1;fontSize=12;fontColor=#344563;labelBackgroundColor=#ffffff;" target="splitprep" value="reviewed labels">
+          <mxGeometry relative="1" x="-0.3077" y="23" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="a3" edge="1" parent="1" source="splitprep" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#526477;strokeWidth=2;endArrow=block;endFill=1;fontSize=12;fontColor=#344563;labelBackgroundColor=#ffffff;" target="experiments" value="train/val/test groups">
+          <mxGeometry relative="1" x="-0.0667" y="68" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="a4" edge="1" parent="1" source="annotate" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#526477;strokeWidth=2;endArrow=block;endFill=1;fontSize=12;fontColor=#344563;labelBackgroundColor=#ffffff;" target="segtrain" value="pixel annotations">
+          <mxGeometry relative="1" x="0.6" y="22" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="a5" edge="1" parent="1" source="experiments" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#526477;strokeWidth=2;endArrow=block;endFill=1;fontSize=12;fontColor=#344563;labelBackgroundColor=#ffffff;" target="verifyrelease" value="selected classifier">
+          <mxGeometry relative="1" x="-0.1181" y="18" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="a6" edge="1" parent="1" source="segtrain" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#526477;strokeWidth=2;endArrow=block;endFill=1;fontSize=12;fontColor=#344563;labelBackgroundColor=#ffffff;" target="verifyrelease" value="validated masks">
+          <mxGeometry relative="1" y="33" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="a7" edge="1" parent="1" source="govdata" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#526477;strokeWidth=2;endArrow=block;endFill=1;fontSize=10;fontColor=#344563;labelBackgroundColor=#ffffff;" target="rulesvalidate" value="official guidance">
+          <mxGeometry relative="1" x="-0.2" y="20" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="290" y="310" />
+              <mxPoint x="290" y="310" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="a8" edge="1" parent="1" source="rulesvalidate" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#526477;strokeWidth=2;endArrow=block;endFill=1;fontSize=12;fontColor=#344563;labelBackgroundColor=#ffffff;" target="verifyrelease" value="verified agronomy rules">
+          <mxGeometry relative="1" x="-0.5903" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="870" y="312.5" />
+              <mxPoint x="870" y="380" />
+              <mxPoint x="1310" y="380" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="a9" edge="1" parent="1" source="verifyrelease" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#526477;strokeWidth=2;endArrow=block;endFill=1;fontSize=12;fontColor=#344563;labelBackgroundColor=#ffffff;" target="bundle" value="approved assets">
+          <mxGeometry relative="1" x="0.0667" y="23" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="farmer" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=10;fillColor=#ffffff;strokeColor=#4c6f91;fontColor=#172b4d;fontSize=15;align=center;verticalAlign=middle;spacing=8;fontStyle=1;" value="Farmer / field user" vertex="1">
+          <mxGeometry height="70" width="150" x="65" y="810" as="geometry" />
+        </mxCell>
+        <mxCell id="flutter" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=10;fillColor=#e8f1ff;strokeColor=#4a73a8;fontColor=#172b4d;fontSize=15;align=center;verticalAlign=middle;spacing=8;fontStyle=1;" value="Flutter mobile app&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;Capture / diagnosis / results&lt;br&gt;field &amp;amp; crop inputs&lt;/font&gt;" vertex="1">
+          <mxGeometry height="120" width="210" x="240" y="675" as="geometry" />
+        </mxCell>
+        <mxCell id="controller" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=10;fillColor=#e8f1ff;strokeColor=#4a73a8;fontColor=#172b4d;fontSize=15;align=center;verticalAlign=middle;spacing=8;fontStyle=1;" value="Diagnosis controller&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;Input validation, orchestration,&lt;br&gt;state, fallback handling&lt;/font&gt;" vertex="1">
+          <mxGeometry height="120" width="220" x="600" y="780" as="geometry" />
+        </mxCell>
+        <mxCell id="preprocess" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=10;fillColor=#edf4ff;strokeColor=#6481aa;fontColor=#172b4d;fontSize=14;align=center;verticalAlign=middle;spacing=8;fontStyle=1;" value="Image quality + preprocessing&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;orientation, resize, optional&lt;br&gt;illumination/color correction&lt;/font&gt;" vertex="1">
+          <mxGeometry height="105" width="235" x="592.5" y="960" as="geometry" />
+        </mxCell>
+        <mxCell id="classifier" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=10;fillColor=#edf4ff;strokeColor=#6481aa;fontColor=#172b4d;fontSize=14;align=center;verticalAlign=middle;spacing=8;fontStyle=1;" value="Nutrient classifier&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;Healthy / N / P / K / uncertain&lt;br&gt;class + calibrated confidence&lt;/font&gt;" vertex="1">
+          <mxGeometry height="105" width="235" x="782.5" y="510" as="geometry" />
+        </mxCell>
+        <mxCell id="segment" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=10;fillColor=#edf4ff;strokeColor=#6481aa;fontColor=#172b4d;fontSize=14;align=center;verticalAlign=middle;spacing=8;fontStyle=1;" value="Leaf &amp;amp; symptom segmenter&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;Total leaf mask + class-specific&lt;br&gt;symptom masks&lt;/font&gt;" vertex="1">
+          <mxGeometry height="105" width="230" x="1195" y="510" as="geometry" />
+        </mxCell>
+        <mxCell id="severity" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=10;fillColor=#edf4ff;strokeColor=#6481aa;fontColor=#172b4d;fontSize=14;align=center;verticalAlign=middle;spacing=8;fontStyle=1;" value="Severity calculator&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;SI = symptom pixels within leaf&lt;br&gt;/ valid leaf pixels x 100&lt;/font&gt;" vertex="1">
+          <mxGeometry height="105" width="230" x="1195" y="787.5" as="geometry" />
+        </mxCell>
+        <mxCell id="localrules" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=10;fillColor=#fff3d6;strokeColor=#c28b21;fontColor=#172b4d;fontSize=14;align=center;verticalAlign=middle;spacing=8;fontStyle=1;" value="Local agronomy rules&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;DOA source/version, zone,&lt;br&gt;water regime, soil/LCI, stage&lt;/font&gt;" vertex="1">
+          <mxGeometry height="105" width="225" x="1490" y="510" as="geometry" />
+        </mxCell>
+        <mxCell id="estimator" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=10;fillColor=#fff3d6;strokeColor=#c28b21;fontColor=#172b4d;fontSize=14;align=center;verticalAlign=middle;spacing=8;fontStyle=1;" value="Fertilizer estimator&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;Rule lookup + nutrient/product&lt;br&gt;conversion + field-area scaling&lt;/font&gt;" vertex="1">
+          <mxGeometry height="105" width="225" x="1490" y="900" as="geometry" />
+        </mxCell>
+        <mxCell id="store" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=10;fillColor=#f0ecfa;strokeColor=#8064a2;fontColor=#172b4d;fontSize=13;align=center;verticalAlign=middle;spacing=8;fontStyle=1;" value="Local report store&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;Image reference, prediction,&lt;br&gt;SI, estimate, source &amp;amp; status&lt;/font&gt;" vertex="1">
+          <mxGeometry height="80" width="230" x="970" y="940" as="geometry" />
+        </mxCell>
+        <mxCell id="r1" edge="1" parent="1" source="farmer" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#526477;strokeWidth=2;endArrow=block;endFill=1;fontSize=12;fontColor=#344563;labelBackgroundColor=#ffffff;" target="flutter" value="image + field context">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r2" edge="1" parent="1" source="flutter" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#526477;strokeWidth=2;endArrow=block;endFill=1;fontSize=12;fontColor=#344563;labelBackgroundColor=#ffffff;" target="controller" value="submit diagnosis">
+          <mxGeometry relative="1" x="0.0667" y="25" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="r3" edge="1" parent="1" source="controller" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#526477;strokeWidth=2;endArrow=block;endFill=1;fontSize=12;fontColor=#344563;labelBackgroundColor=#ffffff;" target="preprocess" value="image">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r4" edge="1" parent="1" source="preprocess" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#526477;strokeWidth=2;endArrow=block;endFill=1;fontSize=12;fontColor=#344563;labelBackgroundColor=#ffffff;" target="classifier" value="normalized image">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="900" y="1012.5" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="r5" edge="1" parent="1" source="classifier" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#526477;strokeWidth=2;endArrow=block;endFill=1;fontSize=12;fontColor=#344563;labelBackgroundColor=#ffffff;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="segment" value="accepted deficiency class">
+          <mxGeometry relative="1" x="0.0423" y="-28" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="r6" edge="1" parent="1" source="segment" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#526477;strokeWidth=2;endArrow=block;endFill=1;fontSize=12;fontColor=#344563;labelBackgroundColor=#ffffff;" target="severity" value="leaf + symptom masks">
+          <mxGeometry relative="1" x="-0.2464" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="r7" edge="1" parent="1" source="flutter" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#526477;strokeWidth=2;endArrow=block;endFill=1;fontSize=12;fontColor=#344563;labelBackgroundColor=#ffffff;dashed=1;dashPattern=6 4;" target="localrules" value="zone / soil / crop inputs">
+          <mxGeometry relative="1" x="0.0341" as="geometry">
+            <Array as="points">
+              <mxPoint x="1560" y="710" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="r8" edge="1" parent="1" source="localrules" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#526477;strokeWidth=2;endArrow=block;endFill=1;fontSize=12;fontColor=#344563;labelBackgroundColor=#ffffff;" target="estimator" value="applicable DOA rule">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1650" y="760" />
+              <mxPoint x="1650" y="760" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="r9" edge="1" parent="1" source="severity" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#526477;strokeWidth=2;endArrow=block;endFill=1;fontSize=12;fontColor=#344563;labelBackgroundColor=#ffffff;dashed=1;dashPattern=6 4;" target="estimator" value="SI is reported separately;&amp;nbsp;&lt;div&gt;dose requires validated&amp;nbsp;&lt;/div&gt;&lt;div&gt;agronomic inputs&lt;/div&gt;">
+          <mxGeometry relative="1" x="-0.2842" y="40" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="r10" edge="1" parent="1" source="estimator" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#526477;strokeWidth=2;endArrow=block;endFill=1;fontSize=12;fontColor=#344563;labelBackgroundColor=#ffffff;" target="store" value="estimate + provenance">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r11" edge="1" parent="1" source="severity" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#526477;strokeWidth=2;endArrow=block;endFill=1;fontSize=12;fontColor=#344563;labelBackgroundColor=#ffffff;" target="store" value="SI + mask summary">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r12" edge="1" parent="1" source="controller" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#526477;strokeWidth=2;endArrow=block;endFill=1;fontSize=12;fontColor=#344563;labelBackgroundColor=#ffffff;dashed=1;dashPattern=6 4;" target="store" value="diagnosis report">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="note" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=10;fillColor=#fff8e7;strokeColor=#c28b21;fontColor=#172b4d;fontSize=12;align=center;verticalAlign=middle;spacing=8;" value="Safety / scope rule: visual SI alone does not determine fertilizer dose. Low-confidence, mixed, poor-quality, or missing-input cases return a retake / agronomist-review state." vertex="1">
+          <mxGeometry height="80" width="630" x="110" y="570" as="geometry" />
+        </mxCell>
+        <mxCell id="Ttf6b8Jwz0-WZVw1TFBv-1" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontColor=light-dark(#97ADC7,#00CCCC);" value="&lt;span style=&quot;font-size: 18px; font-weight: 700;&quot;&gt;OFFLINE RESEARCH AND RELEASE PIPELINE&lt;/span&gt;" vertex="1">
+          <mxGeometry height="30" width="415" x="65" y="-30" as="geometry" />
+        </mxCell>
+        <mxCell id="Ttf6b8Jwz0-WZVw1TFBv-2" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;span style=&quot;color: rgb(36, 107, 85); font-size: 18px; font-weight: 700;&quot;&gt;MOBILE RUNTIME — ON-DEVICE VISION + LOCAL AGRONOMY RULES&lt;/span&gt;" vertex="1">
+          <mxGeometry height="30" width="630" x="65" y="525" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="classes" name="UML Class Diagram">
+    <mxGraphModel dx="1850" dy="1360" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1850" pageHeight="1360" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="ctitle" value="Mobile Application UML Class Diagram — Proposed Design" style="text;html=1;align=left;verticalAlign=middle;fillColor=#ffffff;strokeColor=#ffffff;fontColor=#172b4d;fontSize=24;align=center;verticalAlign=middle;spacing=8;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="25" y="12" width="1800" height="38" as="geometry" />
+        </mxCell>
+        <mxCell id="boundary" value="&lt;&lt;boundary&gt;&gt;&lt;br&gt;&lt;b&gt;SarusaraApp&lt;/b&gt;&lt;hr&gt;+ run() : Widget&lt;br&gt;+ buildTheme() : ThemeData" style="rounded=1;whiteSpace=wrap;html=1;arcSize=10;fillColor=#e8f1ff;strokeColor=#4a73a8;fontColor=#172b4d;fontSize=13;align=left;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="55" y="80" width="270" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="diagnosisscreen" value="&lt;&lt;boundary&gt;&gt;&lt;br&gt;&lt;b&gt;DiagnosisScreen&lt;/b&gt;&lt;hr&gt;+ captureOrSelectImage()&lt;br&gt;+ enterFieldProfile()&lt;br&gt;+ showDiagnosis(result)" style="rounded=1;whiteSpace=wrap;html=1;arcSize=10;fillColor=#e8f1ff;strokeColor=#4a73a8;fontColor=#172b4d;fontSize=13;align=left;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="390" y="80" width="300" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="resultscreen" value="&lt;&lt;boundary&gt;&gt;&lt;br&gt;&lt;b&gt;ResultsScreen&lt;/b&gt;&lt;hr&gt;+ showClassResult()&lt;br&gt;+ showSymptomOverlay()&lt;br&gt;+ showSeverity()&lt;br&gt;+ showFertilizerEstimate()" style="rounded=1;whiteSpace=wrap;html=1;arcSize=10;fillColor=#e8f1ff;strokeColor=#4a73a8;fontColor=#172b4d;fontSize=13;align=left;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="760" y="80" width="320" height="165" as="geometry" />
+        </mxCell>
+        <mxCell id="controller" value="&lt;&lt;control&gt;&gt;&lt;br&gt;&lt;b&gt;DiagnosisController&lt;/b&gt;&lt;hr&gt;+ diagnose(image, profile)&lt;br&gt;+ validateInputs()&lt;br&gt;+ buildReport()&lt;br&gt;+ handleUncertainCase()" style="rounded=1;whiteSpace=wrap;html=1;arcSize=10;fillColor=#e7f4ec;strokeColor=#42816c;fontColor=#172b4d;fontSize=13;align=left;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="1160" y="80" width="340" height="175" as="geometry" />
+        </mxCell>
+        <mxCell id="capture" value="&lt;&lt;service&gt;&gt;&lt;br&gt;&lt;b&gt;ImageCaptureService&lt;/b&gt;&lt;hr&gt;+ capture() : LeafImage&lt;br&gt;+ selectFromGallery() : LeafImage&lt;br&gt;+ checkImageQuality()" style="rounded=1;whiteSpace=wrap;html=1;arcSize=10;fillColor=#eef6ff;strokeColor=#6481aa;fontColor=#172b4d;fontSize=13;align=left;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="55" y="340" width="270" height="155" as="geometry" />
+        </mxCell>
+        <mxCell id="preprocess" value="&lt;&lt;service&gt;&gt;&lt;br&gt;&lt;b&gt;ImagePreprocessor&lt;/b&gt;&lt;hr&gt;+ correctOrientation()&lt;br&gt;+ whiteBalance(image)&lt;br&gt;+ convertColorSpace()&lt;br&gt;+ resizeAndNormalize()" style="rounded=1;whiteSpace=wrap;html=1;arcSize=10;fillColor=#eef6ff;strokeColor=#6481aa;fontColor=#172b4d;fontSize=13;align=left;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="390" y="340" width="300" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="classifier" value="&lt;&lt;service&gt;&gt;&lt;br&gt;&lt;b&gt;NutrientClassifier&lt;/b&gt;&lt;hr&gt;+ classify(image) : ClassificationResult&lt;br&gt;+ modelVersion : String&lt;br&gt;+ confidenceThreshold : double" style="rounded=1;whiteSpace=wrap;html=1;arcSize=10;fillColor=#eef6ff;strokeColor=#6481aa;fontColor=#172b4d;fontSize=13;align=left;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="760" y="340" width="320" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="segmenter" value="&lt;&lt;service&gt;&gt;&lt;br&gt;&lt;b&gt;LeafSymptomSegmenter&lt;/b&gt;&lt;hr&gt;+ segment(image, class)&lt;br&gt;+ leafMask : PixelMask&lt;br&gt;+ symptomMasks : Map&amp;lt;NutrientClass, PixelMask&amp;gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=10;fillColor=#eef6ff;strokeColor=#6481aa;fontColor=#172b4d;fontSize=13;align=left;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="1160" y="340" width="340" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="sicalc" value="&lt;&lt;service&gt;&gt;&lt;br&gt;&lt;b&gt;SeverityIndexCalculator&lt;/b&gt;&lt;hr&gt;+ calculate(masks) : SeverityResult&lt;br&gt;+ validLeafPixelCount()&lt;br&gt;+ symptomPixelCount(class)&lt;br&gt;+ SI(%) = 100 x symptom / leaf" style="rounded=1;whiteSpace=wrap;html=1;arcSize=10;fillColor=#eef6ff;strokeColor=#6481aa;fontColor=#172b4d;fontSize=13;align=left;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="1550" y="340" width="265" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="rulesrepo" value="&lt;&lt;repository&gt;&gt;&lt;br&gt;&lt;b&gt;AgronomyRulesRepository&lt;/b&gt;&lt;hr&gt;+ findRule(profile, class)&lt;br&gt;+ getVersion() : String&lt;br&gt;+ getSource(ruleId) : URI&lt;br&gt;+ listApplicableRules()" style="rounded=1;whiteSpace=wrap;html=1;arcSize=10;fillColor=#fff3d6;strokeColor=#c28b21;fontColor=#172b4d;fontSize=13;align=left;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="55" y="665" width="300" height="175" as="geometry" />
+        </mxCell>
+        <mxCell id="estimator" value="&lt;&lt;service&gt;&gt;&lt;br&gt;&lt;b&gt;FertilizerEstimator&lt;/b&gt;&lt;hr&gt;+ estimate(rule, profile)&lt;br&gt;+ scaleByFieldArea()&lt;br&gt;+ convertNutrientToProduct()&lt;br&gt;+ validateRequiredInputs()" style="rounded=1;whiteSpace=wrap;html=1;arcSize=10;fillColor=#fff3d6;strokeColor=#c28b21;fontColor=#172b4d;fontSize=13;align=left;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="425" y="665" width="315" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="reportstore" value="&lt;&lt;repository&gt;&gt;&lt;br&gt;&lt;b&gt;DiagnosisReportRepository&lt;/b&gt;&lt;hr&gt;+ save(report)&lt;br&gt;+ findById(reportId)&lt;br&gt;+ export(reportId)" style="rounded=1;whiteSpace=wrap;html=1;arcSize=10;fillColor=#f0ecfa;strokeColor=#8064a2;fontColor=#172b4d;fontSize=13;align=left;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="825" y="665" width="320" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="report" value="&lt;&lt;entity&gt;&gt;&lt;br&gt;&lt;b&gt;DiagnosisReport&lt;/b&gt;&lt;hr&gt;reportId : String&lt;br&gt;createdAt : DateTime&lt;br&gt;classification : ClassificationResult&lt;br&gt;severity? : SeverityResult&lt;br&gt;estimate? : FertilizerEstimate&lt;br&gt;status : ReportStatus" style="rounded=1;whiteSpace=wrap;html=1;arcSize=10;fillColor=#fafafa;strokeColor=#697b8c;fontColor=#172b4d;fontSize=13;align=left;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="1250" y="680" width="335" height="205" as="geometry" />
+        </mxCell>
+        <mxCell id="fertilizerrule" value="&lt;&lt;entity&gt;&gt;&lt;br&gt;&lt;b&gt;FertilizerRule&lt;/b&gt;&lt;hr&gt;ruleId : String&lt;br&gt;zone / water regime / stage&lt;br&gt;soil or leaf-colour conditions&lt;br&gt;nutrientRate : Quantity&lt;br&gt;productConversions : Map&lt;br&gt;applicationSplits : List&lt;br&gt;sourceUri / version / effectiveDate" style="rounded=1;whiteSpace=wrap;html=1;arcSize=10;fillColor=#fff8e7;strokeColor=#c28b21;fontColor=#172b4d;fontSize=12;align=left;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="55" y="875" width="300" height="185" as="geometry" />
+        </mxCell>
+        <mxCell id="pixelmask" value="&lt;&lt;value object&gt;&gt;&lt;br&gt;&lt;b&gt;PixelMask&lt;/b&gt;&lt;hr&gt;width : int&lt;br&gt;height : int&lt;br&gt;classLabel : NutrientClass?&lt;br&gt;binaryMask : Array&amp;lt;bool&amp;gt;&lt;br&gt;validPixelCount : int" style="rounded=1;whiteSpace=wrap;html=1;arcSize=10;fillColor=#f4f7fb;strokeColor=#697b8c;fontColor=#172b4d;fontSize=13;align=left;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="425" y="875" width="315" height="165" as="geometry" />
+        </mxCell>
+        <mxCell id="nutrientenum" value="&amp;lt;&amp;lt;enumeration&amp;gt;&amp;gt;&lt;br&gt;&lt;b&gt;NutrientClass&lt;/b&gt;&lt;hr&gt;healthy&lt;br&gt;nitrogen&lt;br&gt;phosphorus&lt;br&gt;potassium&lt;br&gt;other&lt;br&gt;uncertain" style="rounded=1;whiteSpace=wrap;html=1;arcSize=10;fillColor=#f4f7fb;strokeColor=#697b8c;fontColor=#172b4d;fontSize=13;align=left;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="825" y="875" width="320" height="165" as="geometry" />
+        </mxCell>
+        <mxCell id="leafimage" value="&lt;&lt;entity&gt;&gt;&lt;br&gt;&lt;b&gt;LeafImage&lt;/b&gt;&lt;hr&gt;uri : String&lt;br&gt;capturedAt : DateTime&lt;br&gt;plantGroupId? : String&lt;br&gt;metadata : CaptureMetadata" style="rounded=1;whiteSpace=wrap;html=1;arcSize=10;fillColor=#fafafa;strokeColor=#697b8c;fontColor=#172b4d;fontSize=13;align=left;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="55" y="1085" width="300" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="profile" value="&lt;&lt;entity&gt;&gt;&lt;br&gt;&lt;b&gt;FieldProfile&lt;/b&gt;&lt;hr&gt;area : double&lt;br&gt;areaUnit : AreaUnit&lt;br&gt;gnDivision? : String&lt;br&gt;agroZone? : String&lt;br&gt;waterRegime : WaterRegime&lt;br&gt;growthStage? : String&lt;br&gt;soilTest? / leafColourIndex?" style="rounded=1;whiteSpace=wrap;html=1;arcSize=10;fillColor=#fafafa;strokeColor=#697b8c;fontColor=#172b4d;fontSize=13;align=left;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="425" y="1085" width="315" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="classificationresult" value="&lt;&lt;value object&gt;&gt;&lt;br&gt;&lt;b&gt;ClassificationResult&lt;/b&gt;&lt;hr&gt;predictedClass : NutrientClass&lt;br&gt;probabilities : Map&amp;lt;Class, double&amp;gt;&lt;br&gt;confidence : double&lt;br&gt;modelVersion : String" style="rounded=1;whiteSpace=wrap;html=1;arcSize=10;fillColor=#fafafa;strokeColor=#697b8c;fontColor=#172b4d;fontSize=13;align=left;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="825" y="1085" width="320" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="severityresult" value="&lt;&lt;value object&gt;&gt;&lt;br&gt;&lt;b&gt;SeverityResult&lt;/b&gt;&lt;hr&gt;siByClass : Map&amp;lt;NutrientClass, double&amp;gt;&lt;br&gt;validLeafPixels : int&lt;br&gt;symptomPixelsByClass : Map&lt;br&gt;segmentationVersion : String" style="rounded=1;whiteSpace=wrap;html=1;arcSize=10;fillColor=#fafafa;strokeColor=#697b8c;fontColor=#172b4d;fontSize=13;align=left;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="1220" y="1085" width="335" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="estimateentity" value="&lt;&lt;value object&gt;&gt;&lt;br&gt;&lt;b&gt;FertilizerEstimate&lt;/b&gt;&lt;hr&gt;productMasses : Map&amp;lt;Product, Quantity&amp;gt;&lt;br&gt;applicationSplits : List&lt;br&gt;ruleId / ruleVersion : String&lt;br&gt;sourceUri : URI&lt;br&gt;notices : List&amp;lt;String&amp;gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=10;fillColor=#fafafa;strokeColor=#697b8c;fontColor=#172b4d;fontSize=12;align=left;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="1580" y="680" width="245" height="205" as="geometry" />
+        </mxCell>
+        <mxCell id="c1" value="starts" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#526477;strokeWidth=2;endArrow=block;endFill=1;fontSize=12;fontColor=#344563;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="boundary" target="diagnosisscreen">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c2" value="submits request" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#526477;strokeWidth=2;endArrow=block;endFill=1;fontSize=12;fontColor=#344563;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="diagnosisscreen" target="controller">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c3" value="uses" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#526477;strokeWidth=2;endArrow=block;endFill=1;fontSize=12;fontColor=#344563;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="controller" target="preprocess">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c4" value="uses" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#526477;strokeWidth=2;endArrow=block;endFill=1;fontSize=12;fontColor=#344563;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="controller" target="classifier">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c5" value="uses" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#526477;strokeWidth=2;endArrow=block;endFill=1;fontSize=12;fontColor=#344563;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="controller" target="segmenter">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c6" value="masks" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#526477;strokeWidth=2;endArrow=block;endFill=1;fontSize=12;fontColor=#344563;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="segmenter" target="sicalc">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c7" value="queries" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#526477;strokeWidth=2;endArrow=block;endFill=1;fontSize=12;fontColor=#344563;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="controller" target="rulesrepo">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c8" value="requests estimate" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#526477;strokeWidth=2;endArrow=block;endFill=1;fontSize=12;fontColor=#344563;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="controller" target="estimator">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c9" value="provides FertilizerRule" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#526477;strokeWidth=2;endArrow=block;endFill=1;fontSize=12;fontColor=#344563;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="rulesrepo" target="estimator">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c10" value="persists" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#526477;strokeWidth=2;endArrow=block;endFill=1;fontSize=12;fontColor=#344563;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="controller" target="reportstore">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c11" value="stores 1..*" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#526477;strokeWidth=2;endArrow=block;endFill=1;fontSize=12;fontColor=#344563;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="reportstore" target="report">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c12" value="1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#526477;strokeWidth=2;endArrow=block;endFill=1;fontSize=12;fontColor=#344563;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="report" target="classificationresult">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c13" value="0..1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#526477;strokeWidth=2;endArrow=block;endFill=1;fontSize=12;fontColor=#344563;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="report" target="severityresult">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c14" value="0..1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#526477;strokeWidth=2;endArrow=block;endFill=1;fontSize=12;fontColor=#344563;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="report" target="estimateentity">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c15" value="renders state" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#526477;strokeWidth=2;endArrow=block;endFill=1;fontSize=12;fontColor=#344563;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="controller" target="resultscreen">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c16" value="uses" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#526477;strokeWidth=2;endArrow=block;endFill=1;fontSize=12;fontColor=#344563;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="diagnosisscreen" target="capture">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c17" value="creates" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#526477;strokeWidth=2;endArrow=block;endFill=1;fontSize=12;fontColor=#344563;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="capture" target="leafimage">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c18" value="consumes" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#526477;strokeWidth=2;endArrow=block;endFill=1;fontSize=12;fontColor=#344563;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="controller" target="profile">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c19" value="consumes" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#526477;strokeWidth=2;endArrow=block;endFill=1;fontSize=12;fontColor=#344563;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="controller" target="leafimage">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c20" value="creates" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#526477;strokeWidth=2;endArrow=block;endFill=1;fontSize=12;fontColor=#344563;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="controller" target="severityresult">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c21" value="creates" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#526477;strokeWidth=2;endArrow=block;endFill=1;fontSize=12;fontColor=#344563;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="estimator" target="estimateentity">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c22" value="returns 0..1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#526477;strokeWidth=2;endArrow=block;endFill=1;fontSize=12;fontColor=#344563;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="rulesrepo" target="fertilizerrule">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c23" value="consumes" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#526477;strokeWidth=2;endArrow=block;endFill=1;fontSize=12;fontColor=#344563;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="estimator" target="fertilizerrule">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c24" value="creates leaf + symptom masks" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#526477;strokeWidth=2;endArrow=block;endFill=1;fontSize=12;fontColor=#344563;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="segmenter" target="pixelmask">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c25" value="counts pixels" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#526477;strokeWidth=2;endArrow=block;endFill=1;fontSize=12;fontColor=#344563;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="sicalc" target="pixelmask">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c26" value="uses" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#526477;strokeWidth=2;endArrow=block;endFill=1;fontSize=12;fontColor=#344563;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="classificationresult" target="nutrientenum">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c27" value="keyed by class" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#526477;strokeWidth=2;endArrow=block;endFill=1;fontSize=12;fontColor=#344563;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="severityresult" target="nutrientenum">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="classnote" value="Proposed mobile-app design derived from the methodology. The current Flutter source is a starter screen; these domain objects and services describe the planned architecture." style="rounded=1;whiteSpace=wrap;html=1;arcSize=10;fillColor=#fff8e7;strokeColor=#c28b21;fontColor=#172b4d;fontSize=12;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="390" y="1280" width="1080" height="48" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="sequence" name="Main Logic Sequence">
+    <mxGraphModel dx="2050" dy="1140" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2050" pageHeight="1140" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="stitle" value="Main Diagnosis and Fertilizer Estimation Sequence" style="text;html=1;align=left;verticalAlign=middle;fillColor=#ffffff;strokeColor=#ffffff;fontColor=#172b4d;fontSize=24;align=center;verticalAlign=middle;spacing=8;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="25" y="12" width="1980" height="38" as="geometry" />
+        </mxCell>
+        <mxCell id="p_u" value="Farmer" style="rounded=1;whiteSpace=wrap;html=1;arcSize=10;fillColor=#f0ecfa;strokeColor=#8064a2;fontColor=#172b4d;fontSize=13;align=center;verticalAlign=middle;spacing=8;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="15" y="65" width="130" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ll_u" value="" style="rounded=0;dashed=1;fillOpacity=0;strokeWidth=1;fillColor=#ffffff;strokeColor=#b9c5d0;fontColor=#172b4d;fontSize=1;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="79" y="125" width="2" height="895" as="geometry" />
+        </mxCell>
+        <mxCell id="p_ui" value="Flutter UI" style="rounded=1;whiteSpace=wrap;html=1;arcSize=10;fillColor=#e8f1ff;strokeColor=#4a73a8;fontColor=#172b4d;fontSize=13;align=center;verticalAlign=middle;spacing=8;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="225" y="65" width="150" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ll_ui" value="" style="rounded=0;dashed=1;fillOpacity=0;strokeWidth=1;fillColor=#ffffff;strokeColor=#b9c5d0;fontColor=#172b4d;fontSize=1;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="299" y="125" width="2" height="895" as="geometry" />
+        </mxCell>
+        <mxCell id="p_ctl" value="Diagnosis&#xa;Controller" style="rounded=1;whiteSpace=wrap;html=1;arcSize=10;fillColor=#e8f1ff;strokeColor=#4a73a8;fontColor=#172b4d;fontSize=13;align=center;verticalAlign=middle;spacing=8;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="455" y="65" width="150" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ll_ctl" value="" style="rounded=0;dashed=1;fillOpacity=0;strokeWidth=1;fillColor=#ffffff;strokeColor=#b9c5d0;fontColor=#172b4d;fontSize=1;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="529" y="125" width="2" height="895" as="geometry" />
+        </mxCell>
+        <mxCell id="p_prep" value="Image&#xa;Preprocessor" style="rounded=1;whiteSpace=wrap;html=1;arcSize=10;fillColor=#e8f1ff;strokeColor=#4a73a8;fontColor=#172b4d;fontSize=13;align=center;verticalAlign=middle;spacing=8;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="685" y="65" width="150" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ll_prep" value="" style="rounded=0;dashed=1;fillOpacity=0;strokeWidth=1;fillColor=#ffffff;strokeColor=#b9c5d0;fontColor=#172b4d;fontSize=1;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="759" y="125" width="2" height="895" as="geometry" />
+        </mxCell>
+        <mxCell id="p_clf" value="Nutrient&#xa;Classifier" style="rounded=1;whiteSpace=wrap;html=1;arcSize=10;fillColor=#e8f1ff;strokeColor=#4a73a8;fontColor=#172b4d;fontSize=13;align=center;verticalAlign=middle;spacing=8;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="915" y="65" width="150" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ll_clf" value="" style="rounded=0;dashed=1;fillOpacity=0;strokeWidth=1;fillColor=#ffffff;strokeColor=#b9c5d0;fontColor=#172b4d;fontSize=1;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="989" y="125" width="2" height="895" as="geometry" />
+        </mxCell>
+        <mxCell id="p_seg" value="Leaf / Symptom&#xa;Segmenter + SI" style="rounded=1;whiteSpace=wrap;html=1;arcSize=10;fillColor=#e8f1ff;strokeColor=#4a73a8;fontColor=#172b4d;fontSize=13;align=center;verticalAlign=middle;spacing=8;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="1155" y="65" width="150" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ll_seg" value="" style="rounded=0;dashed=1;fillOpacity=0;strokeWidth=1;fillColor=#ffffff;strokeColor=#b9c5d0;fontColor=#172b4d;fontSize=1;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="1229" y="125" width="2" height="895" as="geometry" />
+        </mxCell>
+        <mxCell id="p_repo" value="Agronomy Rules&#xa;Repository" style="rounded=1;whiteSpace=wrap;html=1;arcSize=10;fillColor=#fff3d6;strokeColor=#c28b21;fontColor=#172b4d;fontSize=13;align=center;verticalAlign=middle;spacing=8;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="1415" y="65" width="150" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ll_repo" value="" style="rounded=0;dashed=1;fillOpacity=0;strokeWidth=1;fillColor=#ffffff;strokeColor=#b9c5d0;fontColor=#172b4d;fontSize=1;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="1489" y="125" width="2" height="895" as="geometry" />
+        </mxCell>
+        <mxCell id="p_est" value="Fertilizer&#xa;Estimator" style="rounded=1;whiteSpace=wrap;html=1;arcSize=10;fillColor=#fff3d6;strokeColor=#c28b21;fontColor=#172b4d;fontSize=13;align=center;verticalAlign=middle;spacing=8;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="1655" y="65" width="150" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ll_est" value="" style="rounded=0;dashed=1;fillOpacity=0;strokeWidth=1;fillColor=#ffffff;strokeColor=#b9c5d0;fontColor=#172b4d;fontSize=1;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="1729" y="125" width="2" height="895" as="geometry" />
+        </mxCell>
+        <mxCell id="p_db" value="Local Report&#xa;Store" style="rounded=1;whiteSpace=wrap;html=1;arcSize=10;fillColor=#f0ecfa;strokeColor=#8064a2;fontColor=#172b4d;fontSize=13;align=center;verticalAlign=middle;spacing=8;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="1885" y="65" width="130" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="ll_db" value="" style="rounded=0;dashed=1;fillOpacity=0;strokeWidth=1;fillColor=#ffffff;strokeColor=#b9c5d0;fontColor=#172b4d;fontSize=1;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="1949" y="125" width="2" height="895" as="geometry" />
+        </mxCell>
+        <mxCell id="msg1" value="selectImageAndEnterFieldProfile()" style="edgeStyle=none;html=1;strokeColor=#344563;strokeWidth=2;endArrow=block;endFill=1;fontSize=11;fontColor=#172b4d;labelBackgroundColor=#ffffff;align=center;verticalAlign=bottom;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="80" y="155" as="sourcePoint" />
+            <mxPoint x="300" y="155" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="msg2" value="submitDiagnosis(image, fieldProfile)" style="edgeStyle=none;html=1;strokeColor=#344563;strokeWidth=2;endArrow=block;endFill=1;fontSize=11;fontColor=#172b4d;labelBackgroundColor=#ffffff;align=center;verticalAlign=bottom;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="300" y="205" as="sourcePoint" />
+            <mxPoint x="530" y="205" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="msg3" value="checkQualityAndPreprocess(image)" style="edgeStyle=none;html=1;strokeColor=#344563;strokeWidth=2;endArrow=block;endFill=1;fontSize=11;fontColor=#172b4d;labelBackgroundColor=#ffffff;align=center;verticalAlign=bottom;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="530" y="255" as="sourcePoint" />
+            <mxPoint x="760" y="255" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="msg4" value="normalizedImage" style="edgeStyle=none;html=1;strokeColor=#344563;strokeWidth=2;endArrow=block;endFill=1;fontSize=11;fontColor=#172b4d;labelBackgroundColor=#ffffff;align=center;verticalAlign=bottom;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="760" y="305" as="sourcePoint" />
+            <mxPoint x="530" y="305" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="msg5" value="classify(normalizedImage)" style="edgeStyle=none;html=1;strokeColor=#344563;strokeWidth=2;endArrow=block;endFill=1;fontSize=11;fontColor=#172b4d;labelBackgroundColor=#ffffff;align=center;verticalAlign=bottom;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="530" y="355" as="sourcePoint" />
+            <mxPoint x="990" y="355" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="msg6" value="class + probabilities + confidence" style="edgeStyle=none;html=1;strokeColor=#344563;strokeWidth=2;endArrow=block;endFill=1;fontSize=11;fontColor=#172b4d;labelBackgroundColor=#ffffff;align=center;verticalAlign=bottom;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="990" y="405" as="sourcePoint" />
+            <mxPoint x="530" y="405" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="msg7" value="[deficiency &amp;amp; confidence acceptable] segment(image, class)" style="edgeStyle=none;html=1;strokeColor=#344563;strokeWidth=2;endArrow=block;endFill=1;fontSize=11;fontColor=#172b4d;labelBackgroundColor=#ffffff;align=center;verticalAlign=bottom;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="530" y="455" as="sourcePoint" />
+            <mxPoint x="1230" y="455" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="msg8" value="leafMask + symptomMasks + SI by class" style="edgeStyle=none;html=1;strokeColor=#344563;strokeWidth=2;endArrow=block;endFill=1;fontSize=11;fontColor=#172b4d;labelBackgroundColor=#ffffff;align=center;verticalAlign=bottom;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1230" y="505" as="sourcePoint" />
+            <mxPoint x="530" y="505" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="msg9" value="findRule(zone, water, stage, soil / LCI)" style="edgeStyle=none;html=1;strokeColor=#344563;strokeWidth=2;endArrow=block;endFill=1;fontSize=11;fontColor=#172b4d;labelBackgroundColor=#ffffff;align=center;verticalAlign=bottom;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="530" y="555" as="sourcePoint" />
+            <mxPoint x="1490" y="555" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="msg10" value="applicable rule + units + source/version" style="edgeStyle=none;html=1;strokeColor=#344563;strokeWidth=2;endArrow=block;endFill=1;fontSize=11;fontColor=#172b4d;labelBackgroundColor=#ffffff;align=center;verticalAlign=bottom;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1490" y="605" as="sourcePoint" />
+            <mxPoint x="530" y="605" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="msg11" value="estimate(rule, area, required inputs)" style="edgeStyle=none;html=1;strokeColor=#344563;strokeWidth=2;endArrow=block;endFill=1;fontSize=11;fontColor=#172b4d;labelBackgroundColor=#ffffff;align=center;verticalAlign=bottom;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="530" y="655" as="sourcePoint" />
+            <mxPoint x="1730" y="655" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="msg12" value="product quantities OR missing-input status" style="edgeStyle=none;html=1;strokeColor=#344563;strokeWidth=2;endArrow=block;endFill=1;fontSize=11;fontColor=#172b4d;labelBackgroundColor=#ffffff;align=center;verticalAlign=bottom;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1730" y="705" as="sourcePoint" />
+            <mxPoint x="530" y="705" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="msg13" value="save(DiagnosisReport)" style="edgeStyle=none;html=1;strokeColor=#344563;strokeWidth=2;endArrow=block;endFill=1;fontSize=11;fontColor=#172b4d;labelBackgroundColor=#ffffff;align=center;verticalAlign=bottom;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="530" y="755" as="sourcePoint" />
+            <mxPoint x="1950" y="755" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="msg14" value="reportId" style="edgeStyle=none;html=1;strokeColor=#344563;strokeWidth=2;endArrow=block;endFill=1;fontSize=11;fontColor=#172b4d;labelBackgroundColor=#ffffff;align=center;verticalAlign=bottom;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1950" y="805" as="sourcePoint" />
+            <mxPoint x="530" y="805" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="msg15" value="show class, confidence, masks, SI, estimate + provenance" style="edgeStyle=none;html=1;strokeColor=#344563;strokeWidth=2;endArrow=block;endFill=1;fontSize=11;fontColor=#172b4d;labelBackgroundColor=#ffffff;align=center;verticalAlign=bottom;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="530" y="855" as="sourcePoint" />
+            <mxPoint x="300" y="855" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="msg16" value="review result / retake / seek agronomic review" style="edgeStyle=none;html=1;strokeColor=#344563;strokeWidth=2;endArrow=block;endFill=1;fontSize=11;fontColor=#172b4d;labelBackgroundColor=#ffffff;align=center;verticalAlign=bottom;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="300" y="905" as="sourcePoint" />
+            <mxPoint x="80" y="905" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="branch1" value="alt — Input quality&lt;br&gt;[invalid / blurred / leaf not found: show retake guidance and end]&lt;br&gt;[valid: continue to classification]" style="rounded=1;whiteSpace=wrap;html=1;arcSize=10;fillColor=#fff8e7;strokeColor=#c28b21;fontColor=#172b4d;fontSize=12;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="520" y="945" width="850" height="82" as="geometry" />
+        </mxCell>
+        <mxCell id="branch2" value="alt — Classifier outcome&lt;br&gt;[healthy: report no visible target deficiency; SI = 0 / not applicable]&lt;br&gt;[uncertain or low confidence: request retake / agronomic assessment]&lt;br&gt;[accepted deficiency: segment, calculate SI, then estimate from approved agronomic rules]" style="rounded=1;whiteSpace=wrap;html=1;arcSize=10;fillColor=#fff8e7;strokeColor=#c28b21;fontColor=#172b4d;fontSize=12;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="520" y="1035" width="1320" height="85" as="geometry" />
+        </mxCell>
+        <mxCell id="seqnote" value="Fertilizer dose is derived from the matched DOA rule and field inputs. Image SI is reported separately and does not directly determine dose unless a validated SI-to-dose rule is established." style="rounded=1;whiteSpace=wrap;html=1;arcSize=10;fillColor=#f5faf7;strokeColor=#246b55;fontColor=#172b4d;fontSize=11;align=center;verticalAlign=middle;spacing=8;" vertex="1" parent="1">
+          <mxGeometry x="25" y="1035" width="470" height="85" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
